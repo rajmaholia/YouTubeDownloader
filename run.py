@@ -6,8 +6,11 @@ def run():
   print("\t\t !! Welcome to YoutubeDownloader !!")
   url = input("Enter Url : ")
   print()
-  yd = YoutubeDownloader(url,to="/sdcard/YtDownloads/");
-  yd.download()
-  
+  try:
+    yd = YoutubeDownloader(url,to="/sdcard/YtDownloads/");
+    yd.download()
+  except Exception as e:
+    print(f"Error : {e}")
+    
 if __name__=="__main__":
   run()
